@@ -1,0 +1,56 @@
+<mvc:View
+    controllerName="noid.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:tab="sap.ui.table"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content >
+					<form:SimpleForm editable="true">
+			<form:content>
+				
+				<Label text="Name"></Label>
+				<Input value="{emp>/name}" ></Input>
+				<Label text="Age"></Label>
+				<Input value="{emp>/age}"></Input>
+				<Label text="Dob"></Label>
+				<DatePicker value="{emp>/dob}"/>
+				
+				<Label></Label>
+				
+				<Button press="onSubmit"  type="Accept" text="Submit"></Button>
+			</form:content>
+		</form:SimpleForm>
+
+
+		<tab:Table rows="{employees>/empList}" >
+						<tab:columns>
+						<tab:Column >
+						<tab:label><Label text="Name"></Label></tab:label>
+						<tab:template><Label text="{employees>name}"/></tab:template>
+						</tab:Column>
+
+						<tab:Column >
+						<tab:label><Label text="Age"></Label></tab:label>
+						<tab:template><Label text="{employees>age}"/></tab:template>
+						</tab:Column>
+
+						<tab:Column >
+						<tab:label><Label text="Dob"></Label></tab:label>
+						<tab:template><Label text="{employees>dob}"/></tab:template>
+						</tab:Column>
+
+						
+						</tab:columns>
+						</tab:Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
